@@ -8,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class HighlightsGrupalComponent implements OnInit {
 
   itemsGrupal = [
-    {title: 'Crossfit'},
-    {title: 'Boxeo'},
-    {title: 'Natacion'}
+    {title: 'Crossfit',imageUrl: 'https://unsplash.it/800/600?image=82'},
+    {title: 'Boxeo',imageUrl: 'https://unsplash.it/800/600?image=82'},
+    {title: 'Natacion',imageUrl: 'https://unsplash.it/800/600?image=82'}
   ]
 
   constructor() { }
