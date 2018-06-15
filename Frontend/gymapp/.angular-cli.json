@@ -20,7 +20,8 @@
       "prefix": "app",
       "styles": [
         "styles.css",
-        "../node_modules/ng-zorro-antd/src/ng-zorro-antd.less"
+        "../node_modules/ng-zorro-antd/src/ng-zorro-antd.less",
+        "../node_modules/filepond/dist/filepond.min.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

@@ -5,8 +5,7 @@ import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angula
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
-export class NavComponent implements OnInit{
-
+export class NavComponent implements OnInit {
 
   constructor() { }
 

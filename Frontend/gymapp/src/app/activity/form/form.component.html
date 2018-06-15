@@ -1,0 +1,40 @@
+<form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="title">Nombre</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24">
+      <input nz-input formControlName="title" id="title">
+      <nz-form-explain *ngIf="validateForm.get('title').dirty && validateForm.get('title').errors">The input is not valid title!</nz-form-explain>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="description" nzRequired>Descripcion</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24">
+      <input nz-input type="text" id="description" formControlName="description">
+      <nz-form-explain *ngIf="validateForm.get('description').dirty && validateForm.get('description').errors">Please input your description!</nz-form-explain>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="place" nzRequired>Lugar</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24">
+      <input nz-input type="text" id="place" formControlName="place">
+      <nz-form-explain *ngIf="validateForm.get('place').dirty && validateForm.get('place').errors">Please input your place!</nz-form-explain>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="imageUrl" nzRequired>Imagen</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24">
+      <nz-upload
+        nzAction="https://jsonplaceholder.typicode.com/posts/">
+        <div nz-button>
+          <i class="anticon anticon-upload"></i><span>Click to Upload</span>
+        </div>
+      </nz-upload>
+      <nz-form-explain *ngIf="validateForm.get('imageUrl').dirty && validateForm.get('imageUrl').errors">Please input your image!</nz-form-explain>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item nz-row style="margin-bottom:8px;">
+    <nz-form-control [nzSpan]="14" [nzOffset]="6">
+      <button nz-button nzType="primary">Añadir</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>

@@ -1,0 +1,37 @@
+<div class="ant-row ant-row--size">
+    <div class="ant-row__img"></div>
+</div>
+  
+<div class="ant-row">
+    <div class="ant-row--size2">
+      <div class="ant-row__top">
+        <span>WELCOME</span>
+        <h3 class="ant-row__top__title">We are #1 CrossFit gym</h3>
+        <span>Be part of our premiun Course's community</span>
+      </div>
+      <div class="ant-row__bottom">
+        <div *ngFor="let item of infoarray" class="info">
+            <i class="anticon info__i" [ngClass]="item.icon"></i>
+            <h6 class="info__title">{{ item.title }}</h6>
+            <button nz-button nzType="default">Details</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="ant-row">
+    <h3 style="text-align: center">Our Activities</h3>
+      <ul class="info-grupal cards">
+        <li *ngFor="let item of itemsGrupal" class="cards__item">
+          <div class="card">
+            <div class="card__image" [style.background-image]="'url(' + item.imageUrl + ')'"></div>
+            <div class="card__content">
+              <div class="card__title">{{item.title}}</div>
+              <p class="card__text">{{item.description}}  </p>
+              <button class="btn btn--block card__btn">Info</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+  </div>
+  <nz-footer style="text-align: center;">Ant Design ©2017 Implement By Angular</nz-footer>

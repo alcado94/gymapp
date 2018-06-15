@@ -1,7 +1,8 @@
 <nz-header style="position:fixed; width:100%; z-index: 20">
   <div nz-menu [nzTheme]="'dark'" [nzMode]="'horizontal'" style="line-height: 64px;">
-    <h2 nz-menu-item>GymApp</h2>
-    <div nz-menu-item>Activities</div>
-    <div nz-menu-item style="float: right">Log in</div>
+    <h2 nz-menu-item routerLink="/index">GymApp</h2>
+    <div nz-menu-item routerLink="/activities">Activities</div>
+    <div nz-menu-item *appUserLogged="false" routerLink="/login" style="float: right">Log in</div>
+    <div nz-menu-item *appUserLogged="true" routerLink="/board" style="float: right">Menu</div>
   </div>
 </nz-header>

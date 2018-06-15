@@ -1,0 +1,40 @@
+<form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="name">Nombre</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24">
+      <input nz-input formControlName="name" id="name">
+      <nz-form-explain *ngIf="validateForm.get('name').dirty && validateForm.get('name').errors">The input is not valid name!</nz-form-explain>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="pass" nzRequired>Password</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24">
+      <input nz-input type="text" id="pass" formControlName="pass">
+      <nz-form-explain *ngIf="validateForm.get('pass').dirty && validateForm.get('pass').errors">Please input your password!</nz-form-explain>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="email" nzRequired>Email</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24">
+      <input nz-input type="text" id="email" formControlName="email">
+      <nz-form-explain *ngIf="validateForm.get('email').dirty && validateForm.get('email').errors">Please input your email!</nz-form-explain>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="imageUrl" nzRequired>Imagen</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24">
+      <nz-upload
+        nzAction="https://jsonplaceholder.typicode.com/posts/">
+        <div nz-button>
+          <i class="anticon anticon-upload"></i><span>Click to Upload</span>
+        </div>
+      </nz-upload>
+      <nz-form-explain *ngIf="validateForm.get('imageUrl').dirty && validateForm.get('imageUrl').errors">Please input your image!</nz-form-explain>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item nz-row style="margin-bottom:8px;">
+    <nz-form-control [nzSpan]="14" [nzOffset]="6">
+      <button nz-button nzType="primary">Añadir</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>

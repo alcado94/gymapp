@@ -1,0 +1,28 @@
+<nz-layout>
+  <nz-sider [nzWidth]="200" style="background:#fff">
+    <ul nz-menu [nzMode]="'inline'" style="height:100%">
+      <li nz-submenu>
+        <span title><i class="anticon anticon-user"></i>Actividades</span>
+        <ul>
+          <li nz-menu-item routerLink="/board/admin/activity">Listado</li>
+          <li nz-menu-item *appRolesAccess="['Admin']" routerLink="/board/admin/activity/create">Alta Actividad</li>
+        </ul>
+      </li>
+      <li nz-submenu *appRolesAccess="['Admin']">
+        <span title><i class="anticon anticon-user"></i>Usuarios</span>
+        <ul>
+          <li nz-menu-item routerLink="/board/admin/users">Listado</li>
+          <li nz-menu-item routerLink="/board/admin/users/create">Alta Usuario</li>
+        </ul>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout style="padding:0 24px 24px">
+    <nz-breadcrumb style="margin:16px 0;">
+      <nz-breadcrumb-item *ngFor='let elem of routes'>{{elem}}</nz-breadcrumb-item>
+    </nz-breadcrumb>
+    <nz-content style="background:#fff; padding: 24px; min-height: 280px;">
+      <router-outlet></router-outlet>
+    </nz-content>
+  </nz-layout>
+</nz-layout>

@@ -1,0 +1,28 @@
+<nz-list
+    class="demo-loadmore-list"
+    [nzDataSource]="itemsActivities"
+    [nzItemLayout]="'horizontal'"
+    [nzLoading]="loading"
+    [nzRenderItem]="item"
+    [nzLoadMore]="loadMore">
+    <ng-template #item let-item>
+      <nz-list-item [nzActions]="[editAction,moreAction]">
+        <ng-template #editAction><a (click)="edit(item.iduser)">Editar</a></ng-template>
+        <ng-template #moreAction><a (click)="delete(item.iduser)">Borrar</a></ng-template>
+        <nz-list-item-meta
+            [nzTitle]="nzTitle"
+            nzAvatar="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+            nzDescription="{{item.email}}">
+            <ng-template #nzTitle>
+                <a href="https://ng.ant.design">{{item.name}}</a>
+            </ng-template>
+        </nz-list-item-meta>
+      </nz-list-item>
+    </ng-template>
+    <ng-template #loadMore>
+       <!-- <div *ngIf="showLoadingMore" class="loadmore">
+          <button nz-button *ngIf="!loadingMore" (click)="onLoadMore()">loading more</button>
+          <nz-spin *ngIf="loadingMore" [nzSpinning]="loadingMore"></nz-spin>
+        </div> -->
+    </ng-template>
+  </nz-list>

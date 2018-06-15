@@ -1,0 +1,11 @@
+.login{
+    margin: auto;
+    width: 500px;
+    height: 100vh;
+    margin-top: 35vh;
+}
+
+.login__align{
+    display: flex;
+    justify-content: center;
+}

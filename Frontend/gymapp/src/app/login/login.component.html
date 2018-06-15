@@ -1,0 +1,21 @@
+<form class="login" [formGroup]="validateForm" (ngSubmit)="submitForm()">
+  <nz-form-item class="login__align">
+    <nz-form-label [nzSpan]="4" nzRequired nzFor="email">Email</nz-form-label>
+    <nz-form-control [nzSpan]="8">
+      <input type="text" nz-input formControlName="email" placeholder="Please input your email">
+      <nz-form-explain *ngIf="validateForm.get('email').dirty && validateForm.get('email').errors">Please input your email</nz-form-explain>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item class="login__align">
+    <nz-form-label [nzSpan]="4" nzFor="pass" [nzRequired]="validateForm.get('required')?.value">Password</nz-form-label>
+    <nz-form-control [nzSpan]="8">
+      <input type="password" nz-input formControlName="pass" placeholder="Please input your pass">
+      <nz-form-explain *ngIf="validateForm.get('pass').dirty && validateForm.get('pass').errors">Please input your Password</nz-form-explain>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item class="login__align">
+    <nz-form-control [nzSpan]="8" [nzOffset]="4">
+      <button nz-button nzType="primary">Check</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>
